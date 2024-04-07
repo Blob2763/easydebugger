@@ -94,8 +94,6 @@ ed.variable(value, name)
 | `value`   | yes      | N/A     | the variable's value |
 | `name`    | yes      | N/A     | the variable's name  |
 
-in the future, i might add functionality to detect the variable name automatically. there will be be a way to override this because the detection is not always accurate
-
 ### timers
 you can time how long code takes to run using `ed.start_timer()` and `ed.end_timer()`
 
@@ -331,3 +329,10 @@ ed.display_message(symbol, label, message, line_number, colour_code, indent)
 | `line_number` | yes      | N/A      | the line number shown after the message                                                                                       |
 | `colour_code` | yes      | N/A      | the [8-bit ANSI colour code](https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit) of the message. eg: `"9"` for `ed.error()` |
 | `indent`      | no       | `0`      | the text next to the symbol                                                                                                   |
+
+## plans for the future
+im really happy with how this has turned out, but i still want to add more:
+- automatically try to detect variable name in `ed.variable()`
+- finish writing the documentation (yep, there's more!)
+- make some usage examples
+- an faq
