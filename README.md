@@ -308,3 +308,21 @@ ed.error("error")  # this will be shown
 ![image](https://github.com/Blob2763/easydebugger/assets/88489444/f12d9073-c16a-40d6-bfc9-5dc5a2edc55d)
 
 `ed.show_history()` will still work even if `ed.DISPLAY` is set to `False`
+
+### custom messages
+if you want to make a custom debug message, use `ed.display_message()`
+```py
+import easydebugger as ed
+
+ed.display_message("^", "LABEL", "message", 123, "65")
+```
+![image](https://github.com/Blob2763/easydebugger/assets/88489444/9aa1476e-1bd9-4fe7-bda4-dc64556d2591)
+
+#### parameters
+```py
+ed.export_history(file_name)
+```
+
+| parameter   | required | default  | description                                                |
+|-------------|----------|--------- |------------------------------------------------------------|
+| `symbol`    | yes      | N/A      | the symbol used by the message. eg: `"!"` for `ed.error()` |
