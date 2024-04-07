@@ -89,10 +89,10 @@ ed.variable(my_variable, "my_variable")
 ed.variable(value, name)
 ```
 
-| parameter | required | default | description                                                  |
-|-----------|----------|---------|--------------------------------------------------------------|
-| `value`   | yes      | N/A     | the variable's value                                         |
-| `name`    | yes      | N/A     | the variable's name                                          |
+| parameter | required | default | description          |
+|-----------|----------|---------|----------------------|
+| `value`   | yes      | N/A     | the variable's value |
+| `name`    | yes      | N/A     | the variable's name  |
 
 in the future, i might add functionality to detect the variable name automatically. there will be be a way to override this because the detection is not always accurate
 
@@ -149,17 +149,17 @@ ed.end_timer("foo")
 ed.start_timer(code)
 ```
 
-| parameter | required | default | description                                                  |
-|-----------|----------|---------|--------------------------------------------------------------|
-| `code`    | yes      | N/A     | the timer's name                                             |
+| parameter | required | default | description      |
+|-----------|----------|---------|------------------|
+| `code`    | yes      | N/A     | the timer's name |
 
 ```py
 ed.end_timer(code)
 ```
 
-| parameter | required | default | description                                                  |
-|-----------|----------|---------|--------------------------------------------------------------|
-| `code`    | yes      | N/A     | the timer's name                                             |
+| parameter | required | default | description      |
+|-----------|----------|---------|------------------|
+| `code`    | yes      | N/A     | the timer's name |
 
 #### timer storage
 if you ever need to see all active timers, you can use `ed.timers`
@@ -209,3 +209,102 @@ ed.trace()
 
 #### parameters
 there are no parameters for `ed.trace()` because the function name is detected automatically
+
+#### trace storage
+if you ever need to see any active traces, use `ed.traces`
+```py
+import easydebugger as ed
+
+def foo():
+    ed.trace()
+    bar()
+    ed.trace()
+
+
+def bar():
+    ed.trace()
+    ed.log(ed.traces)
+    ed.trace()
+
+
+foo()
+```
+![image](https://github.com/Blob2763/easydebugger/assets/88489444/d5da34d8-47f7-49ba-a5c7-7514c19a7cf8)
+
+`ed.traces` is a list of all the names of the functions currently being traced
+
+### history
+easydebugger keeps a record of any messages, logs, timers, and traces used since the code started. you can display this record using `ed.display_history()`
+```py
+import easydebugger as ed
+
+ed.error("error")
+ed.display_history()
+```
+![image](https://github.com/Blob2763/easydebugger/assets/88489444/b6f27a37-5ce4-4ca0-855e-4365580ca76d)
+
+each history entry is timestamped in milliseconds since the code started
+
+if a history entry is made in a function, the entry is indented
+```py
+import easydebugger as ed
+
+def foo():
+    ed.trace()
+    ...
+    ed.trace()
+
+ed.error("error")
+foo()
+ed.display_history()
+```
+![image](https://github.com/Blob2763/easydebugger/assets/88489444/4e637abb-cbdd-4d04-9162-65c38f686e57)
+
+#### parameters
+`ed.display_history()` has no parameters
+
+#### history storage
+if you ever need to use the history storage, use `ed.history`
+
+`ed.history` is a list of dictionaries, one dictionary for each history log entry
+
+each log entry looks like this:
+| key            | description                                                                                                                                       |
+|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| `time`         | timestamp of when the log was made in milliseconds since the code started                                                                         |
+| `stack`        | the stack when the log was made. if you don't know what this means, you don't need to worry about it                                              |
+| `stack_length` | length of the stack when the log was made. used for indentation in `ed.display_history()`                                                         |
+| `symbol`       | the symbol used by the message, log, timer, or trace. eg: `"!"` for `ed.error()`                                                                  |
+| `colour`       | the [8-bit ANSI colour code](https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit) of the message, log, timer, or trace. eg: `9` for `ed.error()` |
+| `message`      | the message, log, variable value, or timer/trace message depending on the function that created the entry                                         |
+| `label`        | the code, label, variable name, timer name, or traced function name depending on the function that created the entry                              |
+| `line_number`  | the line number that the function that created the entry is on                                                                                    |
+
+#### history export
+you can export the history with `ed.export_history()`. this makes a text file in a folder called `debug_logs`, the folder is created if it doesn't exist
+
+#### parameters
+```py
+ed.export_history(file_name)
+```
+
+| parameter   | required | default                       | description                                                                               |
+|-------------|----------|-------------------------------|-------------------------------------------------------------------------------------------|
+| `file_name` | no       | `str(round(t.time() * 1000))` | the name of the txt file being made. default is the current UNIX milliseconds as a string |
+
+### hiding messages
+if you want to hide debug messages for a certain area of code, you can use `ed.DISPLAY`
+
+set `ed.DISPLAY` to `False` to hide the messages and set it to `True` if you want to show the messages again
+```py
+import easydebugger as ed
+
+ed.error("error")
+ed.DISPLAY = False
+ed.error("another error")  # this won't be shown
+ed.DISPLAY = True
+ed.error("error")  # this will be shown
+```
+![image](https://github.com/Blob2763/easydebugger/assets/88489444/f12d9073-c16a-40d6-bfc9-5dc5a2edc55d)
+
+`ed.show_history()` will still work even if `ed.DISPLAY` is set to `False`
