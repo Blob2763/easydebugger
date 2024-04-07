@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
-VERSION = '1.0.0'
+VERSION = '1.0.1'
 DESCRIPTION = 'A clean Python debugging tool'
-LONG_DESCRIPTION = 'A clean Python debugging tool. Documentation coming soon...'
+LONG_DESCRIPTION = 'A clean Python debugging tool. Documentation at https://github.com/Blob2763/easydebugger'
 
 # Setting up
 setup(
