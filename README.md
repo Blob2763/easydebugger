@@ -1,7 +1,7 @@
 # easydebugger
 a Python debugging tool made by blob2763
 
-![PyPI](https://img.shields.io/pypi/v/easydebugger?label=pypi)
+[![PyPI](https://img.shields.io/pypi/v/easydebugger?label=pypi)](https://pypi.org/project/easydebugger/)
 
 ## setting it up
 simple stuff for installing any library
