@@ -269,16 +269,16 @@ if you ever need to use the history storage, use `ed.history`
 `ed.history` is a list of dictionaries, one dictionary for each history log entry
 
 each log entry looks like this:
-| key            | description                                                                                                                                       |
-|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| `time`         | timestamp of when the log was made in milliseconds since the code started                                                                         |
-| `stack`        | the stack when the log was made. if you don't know what this means, you don't need to worry about it                                              |
-| `stack_length` | length of the stack when the log was made. used for indentation in `ed.display_history()`                                                         |
-| `symbol`       | the symbol used by the message, log, timer, or trace. eg: `"!"` for `ed.error()`                                                                  |
-| `colour`       | the [8-bit ANSI colour code](https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit) of the message, log, timer, or trace. eg: `9` for `ed.error()` |
-| `message`      | the message, log, variable value, or timer/trace message depending on the function that created the entry                                         |
-| `label`        | the code, label, variable name, timer name, or traced function name depending on the function that created the entry                              |
-| `line_number`  | the line number that the function that created the entry is on                                                                                    |
+| key            | description                                                                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| `time`         | timestamp of when the log was made in milliseconds since the code started                                                                           |
+| `stack`        | the stack when the log was made. if you don't know what this means, you don't need to worry about it                                                |
+| `stack_length` | length of the stack when the log was made. used for indentation in `ed.display_history()`                                                           |
+| `symbol`       | the symbol used by the message, log, timer, or trace. eg: `"!"` for `ed.error()`                                                                    |
+| `colour`       | the [8-bit ANSI colour code](https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit) of the message, log, timer, or trace. eg: `"9"` for `ed.error()` |
+| `message`      | the message, log, variable value, or timer/trace message depending on the function that created the entry                                           |
+| `label`        | the code, label, variable name, timer name, or traced function name depending on the function that created the entry                                |
+| `line_number`  | the line number that the function that created the entry is on                                                                                      |
 
 #### history export
 you can export the history with `ed.export_history()`. this makes a text file in a folder called `debug_logs`, the folder is created if it doesn't exist
@@ -320,9 +320,14 @@ ed.display_message("^", "LABEL", "message", 123, "65")
 
 #### parameters
 ```py
-ed.export_history(file_name)
+ed.display_message(symbol, label, message, line_number, colour_code, indent)
 ```
 
-| parameter   | required | default  | description                                                |
-|-------------|----------|--------- |------------------------------------------------------------|
-| `symbol`    | yes      | N/A      | the symbol used by the message. eg: `"!"` for `ed.error()` |
+| parameter     | required | default  | description                                                                                                                   |
+|---------------|----------|--------- |-------------------------------------------------------------------------------------------------------------------------------|
+| `symbol`      | yes      | N/A      | the symbol used by the message. eg: `"!"` for `ed.error()`                                                                    |
+| `label`       | yes      | N/A      | the text next to the symbol                                                                                                   |
+| `message`     | yes      | N/A      | the main part of the debug message                                                                                            |
+| `line_number` | yes      | N/A      | the line number shown after the message                                                                                       |
+| `colour_code` | yes      | N/A      | the [8-bit ANSI colour code](https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit) of the message. eg: `"9"` for `ed.error()` |
+| `indent`      | no       | `0`      | the text next to the symbol                                                                                                   |
