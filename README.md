@@ -331,11 +331,53 @@ ed.display_message(symbol, label, message, line_number, colour_code, indent)
 | `message`     | yes      | N/A      | the main part of the debug message                                                                                                                               |
 | `line_number` | yes      | N/A      | the line number shown after the message                                                                                                                          |
 | `colour_code` | yes      | N/A      | the [8-bit ANSI colour code](https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit) of the message. eg: `"9"` for `ed.error()`                                    |
-| `indent`      | no       | `0`      | the indentation of the message (used in `ed.display_history()`                                                                                                   |
+| `indent`      | no       | `0`      | the indentation of the message (used in `ed.display_history()`. an indent of 1 is 3 spaces                                                                       |
+
+### changing colours
+you can change the colour of debug messages with its corresponding variable. colour codes are [8-bit ANSI colour codes](https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit)
+```py
+import easydebugger as ed
+
+ed.error("red")
+ed.ERROR = "208"  # changes colour
+ed.error("orange")
+ed.error("also orange")
+```
+![image](https://github.com/Blob2763/easydebugger/assets/88489444/664abab9-c320-4271-8068-7f010018a3b8)
+
+the colour does not change back after you have used it
+
+here are the variables for each function:
+| function                                        | variable   | default value  |
+|-------------------------------------------------|------------|----------------|
+| `ed.error()`                                    | `ERROR`    | `"9"`          |
+| `ed.warn()`                                     | `WARN`     | `"220"`        |
+| `ed.success()`                                  | `SUCCESS`  | `"120"`        |
+| `ed.variable()`                                 | `VARIABLE` | `"208"`        |
+| `ed.log()`                                      | `LOG`      | `"15"`         |
+| `ed.start_timer()`                              | `TIME`     | `"93"`         |
+| `ed.end_timer()`                                | `TIME`     | `"93"`         |
+| `ed.trace()`                                    | `TRACE`    | `"27"`         |
+| `ed.display_history()`                          | `HISTORY`  | `"57"`         |
+| all functions above (and `ed.display_message()` | `ESCAPE`   | `u"\u001b[0m"` |
+
+`ed.ESCAPE` contains the escape characters to stop formatting at the end of a message. you shouldn't edit this variable, but you can if you want to
+```py
+import easydebugger as ed
+
+print(ed.ESCAPE)
+ed.ESCAPE = u"\u001b[48;5;225m"  # ANSI escape code to turn the background pink
+ed.error("error message")
+ed.warn("warn message")
+ed.success("success message")
+```
+![image](https://github.com/Blob2763/easydebugger/assets/88489444/6323a581-5f0e-4f4f-abcc-fd4f322be543)
+
+### start time
+`ed.START_TIME` is the UNIX time in seconds when the code started. it is used for timestamps in history, but you can use it in other places if you want
 
 ## plans for the future
 im really happy with how this has turned out, but i still want to add more:
 - automatically try to detect variable name in `ed.variable()`
-- finish writing the documentation (yep, there's more!)
 - make some usage examples
 - an faq
