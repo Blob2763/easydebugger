@@ -324,14 +324,14 @@ ed.display_message("^", "LABEL", "message", 123, "65")
 ed.display_message(symbol, label, message, line_number, colour_code, indent)
 ```
 
-| parameter     | required | default  | description                                                                                                                   |
-|---------------|----------|--------- |-------------------------------------------------------------------------------------------------------------------------------|
-| `symbol`      | yes      | N/A      | the symbol used by the message. eg: `"!"` for `ed.error()`                                                                    |
-| `label`       | yes      | N/A      | the text next to the symbol                                                                                                   |
-| `message`     | yes      | N/A      | the main part of the debug message                                                                                            |
-| `line_number` | yes      | N/A      | the line number shown after the message                                                                                       |
-| `colour_code` | yes      | N/A      | the [8-bit ANSI colour code](https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit) of the message. eg: `"9"` for `ed.error()` |
-| `indent`      | no       | `0`      | the text next to the symbol                                                                                                   |
+| parameter     | required | default  | description                                                                                                                                                      |
+|---------------|----------|--------- |------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `symbol`      | yes      | N/A      | the symbol used by the message. eg: `"!"` for `ed.error()`. symbols should be 1 character, but there is nothing stopping you from making longer ones if you want |
+| `label`       | yes      | N/A      | the text next to the symbol                                                                                                                                      |
+| `message`     | yes      | N/A      | the main part of the debug message                                                                                                                               |
+| `line_number` | yes      | N/A      | the line number shown after the message                                                                                                                          |
+| `colour_code` | yes      | N/A      | the [8-bit ANSI colour code](https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit) of the message. eg: `"9"` for `ed.error()`                                    |
+| `indent`      | no       | `0`      | the indentation of the message (used in `ed.display_history()`                                                                                                   |
 
 ## plans for the future
 im really happy with how this has turned out, but i still want to add more:
