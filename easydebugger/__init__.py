@@ -15,6 +15,7 @@ LOG = "15"
 TIME = "93"
 TRACE = "27"
 HISTORY = "57"
+STACK = "37"
 
 timers = {}
 traces = []
@@ -200,6 +201,21 @@ def export_history(file_name=str(round(t.time() * 1000))):
             f.write(str(entry) + "\n")
 
 
+def display_stack():
+    caller_line_number = inspect.stack()[1].lineno
+    symbol = "/"
+    colour = STACK
+    message = "Displaying stack:"
+    
+    display_message(symbol, "", message, caller_line_number, colour)
+    
+    stack = inspect.stack()
+    for frame in stack:
+        display_message(symbol, f"{frame.function} ({os.path.basename(frame.filename)})", frame.code_context[0].strip(), frame.lineno, colour, 1)
+    
+    history_log(symbol, colour, message, "", caller_line_number)
+
+
 # ! error
 # * warn
 # + success
@@ -208,5 +224,6 @@ def export_history(file_name=str(round(t.time() * 1000))):
 # = log
 # @ trace
 # - history
+# / stack
 
 START_TIME = t.time()
