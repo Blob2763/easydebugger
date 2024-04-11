@@ -359,6 +359,7 @@ here are the variables for each function:
 | `ed.end_timer()`                                | `TIME`     | `"93"`         |
 | `ed.trace()`                                    | `TRACE`    | `"27"`         |
 | `ed.display_history()`                          | `HISTORY`  | `"57"`         |
+| `ed.display_stack()`                            | `STACK`    | `"37"`         |
 | all functions above (and `ed.display_message()` | `ESCAPE`   | `u"\u001b[0m"` |
 
 `ed.ESCAPE` contains the escape characters to stop formatting at the end of a message. you shouldn't edit this variable, but you can if you want to
