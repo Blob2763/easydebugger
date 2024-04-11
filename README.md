@@ -376,6 +376,40 @@ ed.success("success message")
 ### start time
 `ed.START_TIME` is the UNIX time in seconds when the code started. it is used for timestamps in history, but you can use it in other places if you want
 
+### the stack
+the stack stores the part of the code which is currently running. you can display the stack using `ed.display_stack()`
+```py
+import easydebugger as ed
+
+ed.display_stack()
+```
+![image](https://github.com/Blob2763/easydebugger/assets/88489444/456a81d7-971b-4e6a-a87e-a5a68fab9c37)
+
+each layer of the stack is called a frame. here is how to read each frame
+![image](https://github.com/Blob2763/easydebugger/assets/88489444/88343eb9-bc83-4d2e-ae8d-9eb054ab43c5)
+
+here's another example with more frames
+```py
+import easydebuggertest as ed
+
+
+def foo():
+    ed.display_stack()
+    
+
+def bar():
+    foo()
+
+
+bar()
+```
+![image](https://github.com/Blob2763/easydebugger/assets/88489444/214ea562-c7ed-42fb-89fd-eb8881600261)
+
+here's a diagram to explain the same stack:
+
+![image](https://github.com/Blob2763/easydebugger/assets/88489444/cf12aaea-74ef-4c83-9aae-9078945e8f84)
+
+
 ## plans for the future
 im really happy with how this has turned out, but i still want to add more:
 - automatically try to detect variable name in `ed.variable()`
@@ -394,3 +428,5 @@ im really happy with how this has turned out, but i still want to add more:
 - attempted to fix [#1](https://github.com/Blob2763/easydebugger/issues/1)
 ### 1.1.1
 - actually fixed [#1](https://github.com/Blob2763/easydebugger/issues/1)
+### 1.2.0
+- added `ed.display_stack()`
