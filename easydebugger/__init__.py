@@ -81,7 +81,7 @@ def display_message(symbol, label, message, line_number, colour_code, indent=0):
 
 
 def error(message, code=""):
-    caller_line_number = inspect.stack()[2].lineno
+    caller_line_number = inspect.stack()[1].lineno
     symbol = "!"
     colour = ERROR
     display_message(symbol, code, message, caller_line_number, colour)
@@ -89,7 +89,7 @@ def error(message, code=""):
 
 
 def warn(message, code=""):
-    caller_line_number = inspect.stack()[2].lineno
+    caller_line_number = inspect.stack()[1].lineno
     symbol = "*"
     colour = WARN
     display_message(symbol, code, message, caller_line_number, colour)
@@ -97,7 +97,7 @@ def warn(message, code=""):
         
 
 def success(message, code=""):
-    caller_line_number = inspect.stack()[2].lineno
+    caller_line_number = inspect.stack()[1].lineno
     symbol = "+"
     colour = SUCCESS
     display_message(symbol, code, message, caller_line_number, colour)
@@ -105,7 +105,7 @@ def success(message, code=""):
         
 
 def variable(value, name):
-    caller_line_number = inspect.stack()[2].lineno
+    caller_line_number = inspect.stack()[1].lineno
     symbol = "$"
     colour = VARIABLE
     display_message(symbol, name, value, caller_line_number, colour)
@@ -113,7 +113,7 @@ def variable(value, name):
 
 
 def log(message, label=""):
-    caller_line_number = inspect.stack()[2].lineno
+    caller_line_number = inspect.stack()[1].lineno
     symbol = "="
     colour = LOG
     display_message(symbol, label, message, caller_line_number, colour)
@@ -121,7 +121,7 @@ def log(message, label=""):
 
 
 def start_timer(code):
-    caller_line_number = inspect.stack()[2].lineno
+    caller_line_number = inspect.stack()[1].lineno
     symbol = "#"
     colour = TIME
     
@@ -141,7 +141,7 @@ def end_timer(code):
     colour = TIME
     
     if code in timers:
-        caller_line_number = inspect.stack()[2].lineno
+        caller_line_number = inspect.stack()[1].lineno
         
         start_time = timers[code]
         timers.pop(code)
@@ -158,7 +158,7 @@ def end_timer(code):
 
 
 def trace():
-    caller_line_number = inspect.stack()[2].lineno
+    caller_line_number = inspect.stack()[1].lineno
     symbol = "@"
     colour = TRACE
     

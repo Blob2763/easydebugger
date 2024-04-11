@@ -3,3 +3,5 @@
 /easydebugger.egg-info
 /HOW TO UPDATE.txt
 /versions.json
+/testing.py
+/easydebugger/__pycache__

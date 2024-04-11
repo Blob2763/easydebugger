@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 NAME = "easydebugger"
-VERSION = '1.1.0'
+VERSION = '1.1.1'
 DESCRIPTION = 'A clean Python debugging tool'
 LONG_DESCRIPTION = 'A clean Python debugging tool. Documentation at https://github.com/Blob2763/easydebugger'
 
