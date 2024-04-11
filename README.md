@@ -381,3 +381,16 @@ im really happy with how this has turned out, but i still want to add more:
 - automatically try to detect variable name in `ed.variable()`
 - make some usage examples
 - an faq
+
+## changelog
+### 0.0.1
+- library first published
+### 1.0.0
+- initial release
+- long description added to pypi
+### 1.0.1
+- added docs
+### 1.1.0
+- attempted to fix [#1](https://github.com/Blob2763/easydebugger/issues/1)
+### 1.1.1
+- actually fixed [#1](https://github.com/Blob2763/easydebugger/issues/1)
