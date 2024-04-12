@@ -7,6 +7,7 @@ a Python debugging tool made by blob2763
 ## contents
 - [setting it up](https://github.com/Blob2763/easydebugger/blob/main/README.md#setting-it-up)
 - [docs](https://github.com/Blob2763/easydebugger/blob/main/README.md#docs)
+- [faq](https://github.com/Blob2763/easydebugger/edit/main/README.md#faq)
 - [changelog](https://github.com/Blob2763/easydebugger/blob/main/README.md#changelog)
 - [future plans](https://github.com/Blob2763/easydebugger/blob/main/README.md#future-plans)
 
@@ -415,6 +416,30 @@ here's a diagram to explain the same stack:
 
 ![image](https://github.com/Blob2763/easydebugger/assets/88489444/cf12aaea-74ef-4c83-9aae-9078945e8f84)
 
+## faq
+### why don't i have all the features?
+make sure you are using the latest version of easydebugger. run `pip install --upgrade easydebugger` in the terminal. if you aren't on the latest version, this command will update easydebugger for you.
+
+### i have found a bug, what do i do?
+if you have found a bug, check any existing issues first to make sure someone else hasn't already found it. if you've found a new bug, [create an issue](https://github.com/Blob2763/easydebugger/issues/new). here are some tips to create the best bug report:
+- explain clearly what the bug is. what was the intended result and what actually happened?
+- explain or show how to recreate the bug. if you can, include code that recreates the bug
+- try to include a screenshot of the bug, especially what happened as a result of the bug
+- include any other information you find relevant
+- most importantly, add the bug label to the issue. this helps me find it faster
+
+### i have an idea for a feature to be added, what should i do?
+all ideas are welcome! if you have an idea you think would make easydebugger better, [create an issue](https://github.com/Blob2763/easydebugger/issues/new). follow these steps to create the best feature request:
+- explain clearly what you want to see added.
+- give a reason why you want to see it added. something like "i think it would be cool" is a valid reason, but try to be more specific if you can.
+- most importantly, add the enhancement label to the issue. this helps me find it faster
+
+### the colour codes on `ed.display_message()` aren't working
+remember that the colour codes are strings, not numbers. the fact that it only accepts strings is silly so it will most likely be removed soon
+
+### i have a question that isn't answered here
+[create an issue](https://github.com/Blob2763/easydebugger/issues/new) using the question label, and put a question you have in the issue. i will try to answer your question, and it might even make it to the faq!
+
 ## changelog
 ### 0.0.1
 - library first published
@@ -434,4 +459,3 @@ here's a diagram to explain the same stack:
 im really happy with how this has turned out, but i still want to add more:
 - automatically try to detect variable name in `ed.variable()`
 - make some usage examples
-- an faq
