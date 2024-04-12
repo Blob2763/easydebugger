@@ -4,6 +4,11 @@ a Python debugging tool made by blob2763
 [![PyPI](https://img.shields.io/pypi/v/easydebugger?label=pypi)](https://pypi.org/project/easydebugger/)
 [![Downloads](https://pepy.tech/badge/easydebugger)](https://www.pepy.tech/projects/easydebugger)
 
+## contents
+- [setting it up](https://github.com/Blob2763/easydebugger/blob/main/README.md#setting-it-up)
+- [docs](https://github.com/Blob2763/easydebugger/blob/main/README.md#docs)
+- [changelog](https://github.com/Blob2763/easydebugger/blob/main/README.md#changelog)
+- [future plans](https://github.com/Blob2763/easydebugger/blob/main/README.md#future-plans)
 
 ## setting it up
 simple stuff for installing any library
@@ -410,13 +415,6 @@ here's a diagram to explain the same stack:
 
 ![image](https://github.com/Blob2763/easydebugger/assets/88489444/cf12aaea-74ef-4c83-9aae-9078945e8f84)
 
-
-## plans for the future
-im really happy with how this has turned out, but i still want to add more:
-- automatically try to detect variable name in `ed.variable()`
-- make some usage examples
-- an faq
-
 ## changelog
 ### 0.0.1
 - library first published
@@ -431,3 +429,9 @@ im really happy with how this has turned out, but i still want to add more:
 - actually fixed [#1](https://github.com/Blob2763/easydebugger/issues/1)
 ### 1.2.0
 - added `ed.display_stack()`
+
+## future plans
+im really happy with how this has turned out, but i still want to add more:
+- automatically try to detect variable name in `ed.variable()`
+- make some usage examples
+- an faq
