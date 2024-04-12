@@ -7,7 +7,7 @@ a Python debugging tool made by blob2763
 ## contents
 - [setting it up](https://github.com/Blob2763/easydebugger/blob/main/README.md#setting-it-up)
 - [docs](https://github.com/Blob2763/easydebugger/blob/main/README.md#docs)
-- [faq](https://github.com/Blob2763/easydebugger/edit/main/README.md#faq)
+- [faq](https://github.com/Blob2763/easydebugger/blob/main/README.md#faq)
 - [changelog](https://github.com/Blob2763/easydebugger/blob/main/README.md#changelog)
 - [future plans](https://github.com/Blob2763/easydebugger/blob/main/README.md#future-plans)
 
