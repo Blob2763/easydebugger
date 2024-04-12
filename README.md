@@ -16,7 +16,7 @@ install the library using `pip install easydebugger`
 import easydebugger as ed
 ```
 
-## functions
+## docs
 
 ### messages
 there are 3 types of messages to choose from:
