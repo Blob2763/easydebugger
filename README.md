@@ -2,7 +2,7 @@
 a Python debugging tool made by blob2763
 
 [![PyPI](https://img.shields.io/pypi/v/easydebugger?label=pypi)](https://pypi.org/project/easydebugger/)
-[![Downloads](https://pepy.tech/badge/easydebugger)](https://www.pepy.tech/projects/easydebugger)
+[![Downloads](https://pepy.tech/badge/easydebugger)](https://www.pepy.tech/projects/easydebugger?versions=1.*&versions=0.*)
 
 ## contents
 - [setting it up](https://github.com/Blob2763/easydebugger/blob/main/README.md#setting-it-up)
