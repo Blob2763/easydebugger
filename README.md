@@ -5,11 +5,11 @@ a Python debugging tool made by blob2763
 [![Downloads](https://pepy.tech/badge/easydebugger)](https://www.pepy.tech/projects/easydebugger?versions=1.*&versions=0.*)
 
 ## contents
-- [setting it up](https://github.com/Blob2763/easydebugger/blob/main/README.md#setting-it-up)
-- [docs](https://github.com/Blob2763/easydebugger/blob/main/README.md#docs)
-- [faq](https://github.com/Blob2763/easydebugger/blob/main/README.md#faq)
-- [changelog](https://github.com/Blob2763/easydebugger/blob/main/README.md#changelog)
-- [future plans](https://github.com/Blob2763/easydebugger/blob/main/README.md#future-plans)
+- [setting it up](https://github.com/Blob2763/easydebugger?tab=readme-ov-file#setting-it-up)
+- [docs](https://github.com/Blob2763/easydebugger?tab=readme-ov-file#docs)
+- [faq](https://github.com/Blob2763/easydebugger?tab=readme-ov-file#faq)
+- [changelog](https://github.com/Blob2763/easydebugger?tab=readme-ov-file#changelog)
+- [future plans](https://github.com/Blob2763/easydebugger?tab=readme-ov-file#future-plans)
 
 ## setting it up
 simple stuff for installing any library
