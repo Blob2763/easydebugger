@@ -434,9 +434,6 @@ all ideas are welcome! if you have an idea you think would make easydebugger bet
 - give a reason why you want to see it added. something like "i think it would be cool" is a valid reason, but try to be more specific if you can.
 - most importantly, add the enhancement label to the issue. this helps me find it faster
 
-### the colour codes on `ed.display_message()` aren't working
-remember that the colour codes are strings, not numbers. the fact that it only accepts strings is silly so it will most likely be removed soon
-
 ### i have a question that isn't answered here
 [create an issue](https://github.com/Blob2763/easydebugger/issues/new) using the question label, and put a question you have in the issue. i will try to answer your question, and it might even make it to the faq!
 
@@ -454,6 +451,8 @@ remember that the colour codes are strings, not numbers. the fact that it only a
 - actually fixed [#1](https://github.com/Blob2763/easydebugger/issues/1)
 ### 1.2.0
 - added `ed.display_stack()`
+### 1.2.1
+- fixed [#2](https://github.com/Blob2763/easydebugger/issues/2)
 
 ## future plans
 im really happy with how this has turned out, but i still want to add more:
