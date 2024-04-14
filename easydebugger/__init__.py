@@ -24,9 +24,9 @@ history = []
 
 def format_text(code, text, is_background=False):
     if is_background:
-        return u"\u001b[48;5;" + code + "m" + text + ESCAPE
+        return f"\u001b[48;5;{code}m{text}{ESCAPE}"
     else:
-        return u"\u001b[38;5;" + code + "m" + text + ESCAPE
+        return f"\u001b[38;5;{code}m{text}{ESCAPE}"
 
 
 def history_log(symbol, colour, message, label, line_number):
