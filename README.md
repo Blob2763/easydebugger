@@ -433,7 +433,7 @@ each layer of the stack is called a frame. here is how to read each frame
 
 here's another example with more frames
 ```py
-import easydebuggertest as ed
+import easydebugger as ed
 
 
 def foo():
