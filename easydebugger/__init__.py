@@ -81,6 +81,17 @@ def display_message(symbol, label, message, line_number, colour_code, indent=0):
             print(format_text(colour_code, f" {symbol} ", True), message)
 
 
+class Message:
+    def __init__(self, symbol, colour_code) -> None:
+        self.symbol = symbol
+        self.colour = colour_code
+        
+    def log(self, message, label=""):
+        caller_line_number = inspect.stack()[1].lineno
+        display_message(self.symbol, label, message, caller_line_number, self.colour)
+        history_log(self.symbol, self.colour, message, label, caller_line_number)
+
+
 def error(message, code=""):
     caller_line_number = inspect.stack()[1].lineno
     symbol = "!"
