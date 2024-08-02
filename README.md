@@ -453,6 +453,8 @@ all ideas are welcome! if you have an idea you think would make easydebugger bet
 - added `ed.display_stack()`
 ### 1.2.1
 - fixed [#2](https://github.com/Blob2763/easydebugger/issues/2)
+### 1.3
+- added [#3](https://github.com/Blob2763/easydebugger/issues/3)
 
 ## future plans
 im really happy with how this has turned out, but i still want to add more:
