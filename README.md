@@ -339,6 +339,42 @@ ed.display_message(symbol, label, message, line_number, colour_code, indent)
 | `colour_code` | yes      | N/A      | the [8-bit ANSI colour code](https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit) of the message. eg: `"9"` for `ed.error()`                                    |
 | `indent`      | no       | `0`      | the indentation of the message (used in `ed.display_history()`. an indent of 1 is 3 spaces                                                                       |
 
+### re-callable debug messages
+instead of using `ed.display_message()` every time, you can use `ed.Message` to create custom messages that you can use as many times as you want. you log it using `Message.log()`
+```py
+import easydebugger as ed
+
+custom_message = ed.Message("i", "123")
+custom_message.log("custom message", "label")
+```
+![image](https://github.com/user-attachments/assets/e1e8a5b5-8b72-49e3-a315-a9f3ef5c303f)
+
+### instance variables
+`ed.Message` has 2 instance variables:
+| instance variable | description                                                                                                                   |
+| ------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| `self.symbol`     | the symbol used by the message. eg: `"!"` for `ed.error()`                                                                    |
+| `self.colour`     | the [8-bit ANSI colour code](https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit) of the message. eg: `"9"` for `ed.error()` |
+
+#### parameters
+```py
+ed.Message(symbol, colour_code)
+```
+
+| parameter     | required | default  | description                                                                                                                                                      |
+|---------------|----------|--------- |------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `symbol`      | yes      | N/A      | the symbol used by the message. eg: `"!"` for `ed.error()`. symbols should be 1 character, but there is nothing stopping you from making longer ones if you want |
+| `colour_code` | yes      | N/A      | the [8-bit ANSI colour code](https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit) of the message. eg: `"9"` for `ed.error()`                                    |
+
+```py
+Message.log(symbol, colour_code)
+```
+
+| parameter     | required | default  | description                                                                                                                                                      |
+|---------------|----------|--------- |------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `message`     | yes      | N/A      | the main part of the debug message                                                                                                                               |
+| `label`       | no       | `""`     | the text next to the symbol                                                                                                                                      |
+
 ### changing colours
 you can change the colour of debug messages with its corresponding variable. colour codes are [8-bit ANSI colour codes](https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit)
 ```py
